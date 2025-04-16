@@ -1,11 +1,12 @@
-
+'use client'
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 import { FadeIn } from '@/components/ui/motion';
 import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
+import {useParams} from "next/navigation";
+import Link from "next/link";
 
 // This would come from an API in a real application
 const getBlogPost = (id: string) => {
@@ -77,7 +78,7 @@ const Page = () => {
       <main className="pt-32 pb-24">
         <div className="container px-4 sm:px-6 max-w-4xl mx-auto">
           <FadeIn>
-            <Link to="/blog">
+            <Link href="/blog">
               <Button variant="ghost" className="mb-6">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Blog

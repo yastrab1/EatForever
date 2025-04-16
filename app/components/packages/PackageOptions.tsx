@@ -1,4 +1,4 @@
-
+'use client'
 import React, { useState } from 'react';
 import { FadeIn } from '@/components/ui/motion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";

@@ -1,5 +1,5 @@
-import { products } from '../../../curated-longevity-hub-08/src/data/products';
-import { Product } from '../../../curated-longevity-hub-08/src/components/products/ProductCard';
+import { products } from '@/data/products';
+import { Product } from '@/components/products/ProductCard';
 import { NutritionClaim } from './nutrition-claims';
 
 export interface PackageItem {

@@ -1,6 +1,5 @@
-
+'use client'
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { FadeIn, StaggerChildren } from '@/components/ui/motion';
 import { Search, Calendar, User, ArrowRight } from 'lucide-react';
+import Link from "next/link";
 
 // Sample blog post data
 const BLOG_POSTS = [
@@ -126,7 +126,7 @@ const Page = () => {
                 </CardContent>
                 <CardFooter>
                   <Button variant="outline" asChild className="w-full">
-                    <Link to={`/blog/${post.id}`}>
+                    <Link href={`/blog/${post.id}`}>
                       Read More <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>

@@ -1,5 +1,5 @@
 
-import { WoltProduct } from '../../../curated-longevity-hub-08/src/types/wolt.types';
+import { WoltProduct } from '@/types/wolt.types';
 
 // Interface matching our app's product model
 interface AppProduct {
