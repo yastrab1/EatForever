@@ -1,26 +1,138 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import "tailwindcss/utilities";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+    --color-background: 0 0% 100%;
+    --color-foreground: 222.2 84% 4.9%;
+    --color-border: 214.3 31.8% 91.4%;
+    --color-input: 214.3 31.8% 91.4%;
+    --color-ring: 142 40% 40%;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-primary: 142 40% 40%;
+    --color-primary-foreground: 210 40% 98%;
+
+    --color-secondary: 210 40% 96.1%;
+    --color-secondary-foreground: 222.2 47.4% 11.2%;
+
+    --color-destructive: 0 84.2% 60.2%;
+    --color-destructive-foreground: 210 40% 98%;
+
+    --color-muted: 210 40% 96.1%;
+    --color-muted-foreground: 215.4 16.3% 46.9%;
+
+    --color-accent: 210 40% 96.1%;
+    --color-accent-foreground: 222.2 47.4% 11.2%;
+
+    --color-popover: 0 0% 100%;
+    --color-popover-foreground: 222.2 84% 4.9%;
+
+    --color-card: 0 0% 100%;
+    --color-card-foreground: 222.2 84% 4.9%;
+
+    --color-sidebar-background: 0 0% 100%;
+    --color-sidebar-foreground: 222.2 84% 4.9%;
+    --color-sidebar-primary: 142 40% 40%;
+    --color-sidebar-primary-foreground: 210 40% 98%;
+    --color-sidebar-accent: 210 40% 96.1%;
+    --color-sidebar-accent-foreground: 222.2 47.4% 11.2%;
+    --color-sidebar-border: 214.3 31.8% 91.4%;
+    --color-sidebar-ring: 142 40% 40%;
+
+    --radius: 0.5rem;
+    --font-sans: 'Inter', sans-serif;
+
+    --forest-50: #f2f9f1;
+    --forest-100: #e4f2e3;
+    --forest-200: #c9e5c7;
+    --forest-300: #9dd19c;
+    --forest-400: #6ab569;
+    --forest-500: #479745;
+    --forest-600: #357b35;
+    --forest-700: #2b612c;
+    --forest-800: #254d26;
+    --forest-900: #0a3d10;
+    --forest-950: #052208;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    @theme {
+        --color-background: 222.2 84% 4.9%;
+        --color-foreground: 210 40% 98%;
+
+        --color-card: 222.2 84% 4.9%;
+        --color-card-foreground: 210 40% 98%;
+
+        --color-popover: 222.2 84% 4.9%;
+        --color-popover-foreground: 210 40% 98%;
+
+        --color-primary: 142 40% 40%;
+        --color-primary-foreground: 210 40% 98%;
+
+        --color-secondary: 217.2 32.6% 17.5%;
+        --color-secondary-foreground: 210 40% 98%;
+
+        --color-muted: 217.2 32.6% 17.5%;
+        --color-muted-foreground: 215 20.2% 65.1%;
+
+        --color-accent: 217.2 32.6% 17.5%;
+        --color-accent-foreground: 210 40% 98%;
+
+        --color-destructive: 0 62.8% 30.6%;
+        --color-destructive-foreground: 210 40% 98%;
+
+        --color-border: 217.2 32.6% 17.5%;
+        --color-input: 217.2 32.6% 17.5%;
+        --color-ring: 142 40% 40%;
+
+        --color-sidebar-background: 222.2 84% 4.9%;
+        --color-sidebar-foreground: 210 40% 98%;
+        --color-sidebar-primary: 142 40% 40%;
+        --color-sidebar-primary-foreground: 210 40% 98%;
+        --color-sidebar-accent: 217.2 32.6% 17.5%;
+        --color-sidebar-accent-foreground: 210 40% 98%;
+        --color-sidebar-border: 217.2 32.6% 17.5%;
+        --color-sidebar-ring: 142 40% 40%;
+    }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+    * {
+        border-color: hsl(var(--color-border));
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+        background-color: hsl(var(--color-background));
+        color: hsl(var(--color-foreground));
+        font-family: var(--font-sans);
+        overflow-x: hidden;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply rounded-md px-6 py-3 font-medium transition-all duration-300;
+        background-color: hsl(var(--color-primary));
+        color: hsl(var(--color-primary-foreground));
+    }
+
+    .btn-secondary {
+        @apply rounded-md px-6 py-3 font-medium transition-all duration-300;
+        background-color: hsl(var(--color-secondary));
+        color: hsl(var(--color-secondary-foreground));
+    }
+
+    .product-card {
+        @apply relative rounded-2xl overflow-hidden transition-all duration-500;
+        background-color: white;
+        border: 1px solid hsl(var(--color-border) / 0.5);
+    }
+
+    .glass-panel {
+        background-image: linear-gradient(135deg, rgba(255,255,255,0.5), rgba(255,255,255,0.2));
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
 }
