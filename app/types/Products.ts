@@ -22,24 +22,24 @@ export type NutritionClaim =
     | 'Vitamin Rich'
     | 'Kid Friendly';
 
-export type categories = [
-        "All" |
-        "Protein" |
-        "Grains" |
-        "Vegetables" |
-        "Spreads" |
-        "Beverages" |
-        "Oils" |
-        "Dairy" |
-        "Fruits" |
-        "Seeds" |
-        "Nuts" |
-        "Fermented" |
-        "Condiments" |
-        "Sweeteners" |
-        "Spices" |
-        "Legumes" |
-        "Soups" |
+export const categories = [
+        "All" ,
+        "Protein" ,
+        "Grains" ,
+        "Vegetables" ,
+        "Spreads" ,
+        "Beverages" ,
+        "Oils" ,
+        "Dairy" ,
+        "Fruits" ,
+        "Seeds" ,
+        "Nuts" ,
+        "Fermented" ,
+        "Condiments" ,
+        "Sweeteners" ,
+        "Spices" ,
+        "Legumes",
+        "Soups" ,
         "Sweets"
 ];
 

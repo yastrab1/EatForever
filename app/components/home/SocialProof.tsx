@@ -58,7 +58,7 @@ const SocialProof = () => {
           <StatCard 
             icon={<BadgeCheck className="w-7 h-7" />} 
             value="500+" 
-            label="Verified Products" 
+            label="Verified Page"
           />
           <StatCard 
             icon={<Award className="w-7 h-7" />} 
