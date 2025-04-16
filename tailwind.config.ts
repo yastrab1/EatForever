@@ -1,8 +1,9 @@
 
 import type { Config } from "tailwindcss";
+import "@/globals.css"
 
 export default {
-	darkMode: ["class"],
+	darkMode: "class",
 	content: [
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
@@ -11,6 +12,64 @@ export default {
 	],
 	prefix: "",
 	theme: {
+		colors: {
+			border: 'hsl(var(--border))',
+			input: 'hsl(var(--input))',
+			ring: 'hsl(var(--ring))',
+			background: 'hsl(var(--background))',
+			foreground: 'hsl(var(--foreground))',
+			primary: {
+				DEFAULT: 'hsl(var(--primary))',
+				foreground: 'hsl(var(--primary-foreground))'
+			},
+			secondary: {
+				DEFAULT: 'hsl(var(--secondary))',
+				foreground: 'hsl(var(--secondary-foreground))'
+			},
+			destructive: {
+				DEFAULT: 'hsl(var(--destructive))',
+				foreground: 'hsl(var(--destructive-foreground))'
+			},
+			muted: {
+				DEFAULT: 'hsl(var(--muted))',
+				foreground: 'hsl(var(--muted-foreground))'
+			},
+			accent: {
+				DEFAULT: 'hsl(var(--accent))',
+				foreground: 'hsl(var(--accent-foreground))'
+			},
+			popover: {
+				DEFAULT: 'hsl(var(--popover))',
+				foreground: 'hsl(var(--popover-foreground))'
+			},
+			card: {
+				DEFAULT: 'hsl(var(--card))',
+				foreground: 'hsl(var(--card-foreground))'
+			},
+			sidebar: {
+				DEFAULT: 'hsl(var(--sidebar-background))',
+				foreground: 'hsl(var(--sidebar-foreground))',
+				primary: 'hsl(var(--sidebar-primary))',
+				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+				accent: 'hsl(var(--sidebar-accent))',
+				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+				border: 'hsl(var(--sidebar-border))',
+				ring: 'hsl(var(--sidebar-ring))'
+			},
+			forest: {
+				50: '#f2f9f1',
+				100: '#e4f2e3',
+				200: '#c9e5c7',
+				300: '#9dd19c',
+				400: '#6ab569',
+				500: '#479745',
+				600: '#357b35',
+				700: '#2b612c',
+				800: '#254d26',
+				900: '#0a3d10',
+				950: '#052208',
+			}
+		},
 		container: {
 			center: true,
 			padding: '2rem',
@@ -23,10 +82,8 @@ export default {
 				sans: ['Inter', 'sans-serif'],
 				display: ['SF Pro Display', 'Inter', 'sans-serif'],
 			},
-			colors: {
-				border: 'hsl(var(--border))',
-				input: 'hsl(var(--input))',
-				ring: 'hsl(var(--ring))',
+
+			backgroundColor: {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
@@ -63,22 +120,7 @@ export default {
 					primary: 'hsl(var(--sidebar-primary))',
 					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
 					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				},
-				forest: {
-					50: '#f2f9f1',
-					100: '#e4f2e3',
-					200: '#c9e5c7',
-					300: '#9dd19c',
-					400: '#6ab569',
-					500: '#479745',
-					600: '#357b35',
-					700: '#2b612c',
-					800: '#254d26',
-					900: '#0a3d10',
-					950: '#052208',
+					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))'
 				}
 			},
 			backgroundImage: {
@@ -94,20 +136,12 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
 				},
 				'fade-in': {
 					'0%': { opacity: '0' },
